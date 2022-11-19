@@ -7,6 +7,13 @@
       :info-text="activeUser.description"
       :role="activeUser.role"
     ></user-info>
+
+    <course-goals>
+      <template #default="myProps">
+        <h2>{{myProps.item}}</h2>
+        <p>{{myProps['another-prop']}}</p>
+      </template>
+    </course-goals>
   </div>
 </template>
 
@@ -14,6 +21,7 @@
 import TheHeader from './components/TheHeader.vue';
 import BadgeList from './components/BadgeList.vue';
 import UserInfo from './components/UserInfo.vue';
+import CourseGoals from './components/CourseGoals.vue';
 
 export default {
   data() {
@@ -28,7 +36,8 @@ export default {
   components: {
     TheHeader,
     BadgeList,
-    UserInfo
+    UserInfo,
+    CourseGoals
   }
 };
 </script>
