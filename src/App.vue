@@ -11,6 +11,10 @@
 </template>
 
 <script>
+import TheHeader from './components/TheHeader.vue';
+import BadgeList from './components/BadgeList.vue';
+import UserInfo from './components/UserInfo.vue';
+
 export default {
   data() {
     return {
@@ -21,6 +25,11 @@ export default {
       },
     };
   },
+  components: {
+    TheHeader,
+    BadgeList,
+    UserInfo
+  }
 };
 </script>
 
