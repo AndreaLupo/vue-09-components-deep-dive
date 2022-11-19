@@ -2,11 +2,11 @@
   <section>
     <base-card>
       <!-- target the named slot header -->
-      <template v-slot:header>
+      <template #header>
         <h2>Available Badges</h2>
       </template>
       <!-- target the slot without a name -->
-      <template v-slot:default>
+      <template #default>
         <ul>
           <li>
             <base-badge type="admin" caption="ADMIN"></base-badge>
