@@ -14,6 +14,13 @@
         <p>{{myProps['another-prop']}}</p>
       </template>
     </course-goals>
+
+    <hr>
+    <button @click="selectComponent('active-goals')">Active Goals</button>
+    <button @click="selectComponent('manage-goals')">Manage Goals</button>
+    <!-- <active-goals v-if="selectedComponent === 'active-goals'"></active-goals>
+    <manage-goals v-if="selectedComponent === 'manage-goals'"></manage-goals> -->
+    <component :is="selectedComponent"></component>
   </div>
 </template>
 
@@ -23,6 +30,9 @@ import BadgeList from './components/BadgeList.vue';
 import UserInfo from './components/UserInfo.vue';
 import CourseGoals from './components/CourseGoals.vue';
 
+import ActiveGoals from './components/ActiveGoals.vue';
+import ManageGoals from './components/ManageGoals.vue';
+
 export default {
   data() {
     return {
@@ -31,13 +41,21 @@ export default {
         description: 'Site owner and admin',
         role: 'admin',
       },
+      selectedComponent: 'active-goals'
     };
   },
   components: {
     TheHeader,
     BadgeList,
     UserInfo,
-    CourseGoals
+    CourseGoals,
+    ActiveGoals,
+    ManageGoals
+  },
+  methods: {
+    selectComponent(component) {
+      this.selectedComponent = component;
+    }
   }
 };
 </script>
